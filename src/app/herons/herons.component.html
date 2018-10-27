@@ -1,0 +1,22 @@
+<h1>Find The Area</h1>
+
+<input type="number" [(ngModel)]="a" placeholder="First Number"><br/>
+<input type="number" [(ngModel)]="b" placeholder="Second Number"><br/>
+<input type="number" [(ngModel)]="c" placeholder="Third Number"><br/>
+
+<button (click)="semiperimeter()">Semi Parameter</button>
+<button (click)="areafind()">Area</button>
+
+<p *ngIf="s">Semi Perimeter is {{s}}</p>
+
+<p *ngIf="this.s2">Area is {{this.s2}}</p>
+
+<!-- <input type="number" [(ngModel)]="s">
+<input type="number" [(ngModel)]="a">
+<input type="number" [(ngModel)]="b">
+<input type="number"[(ngModel)]="c">
+
+
+<button (click)="findarea()">Area</button> -->
+
+<!-- <p>Area is 290.4737509655563</p> -->

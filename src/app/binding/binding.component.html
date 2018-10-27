@@ -1,0 +1,27 @@
+<!-- binding data members through ngmodel -->
+<p> Sal is <input [(ngModel)]="sal">  </p>
+<br/>
+<!-- addition -->
+<p>First number is <input [(ngModel)]="a"></p>
+<p>Second number is <input [(ngModel)]="b"></p>
+<button (click) = "add()">Add</button>
+<br/>
+<!-- marks average -->
+<p>Physics mark is <input [(ngModel)]="p"></p>
+<p>Chemistry mark is <input [(ngModel)]="c"></p>
+<p>English mark is <input [(ngModel)]="e"></p>
+<p>Math mark is <input [(ngModel)]="m"></p>
+<p>Hndi mark is <input [(ngModel)]="h"></p>
+<button (click) = marks()>Calculate Average</button>
+<p *ngIf="avg"> Average is {{avg}}</p>
+<!-- Find area and circumference -->
+<p><input [(ngModel)]="radius"></p>
+<button (click)="findarea()">Calculate Area</button>|<button (click)="findcircum()">Calculate Circumference</button>
+<p *ngIf="area">Area is {{area}}</p> | <p *ngIf="circum">Circumference is {{circum}}</p>
+<br/>
+<!-- herons formula -->
+<p>First number <input [(ngModel)]="a1"></p>
+<p>Second number <input [(ngModel)]="b2"></p>
+<p>Third number <input [(ngModel)]="c3"></p>
+<button (click)="semipmtr()">Semi perimeter</button>|<button (click)="findarea1()">Area</button>
+<p *ngIf="s">The semi Perimeter is {{s}}</p>|<p *ngIf="area1">The area is {{area1}}</p>

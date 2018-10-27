@@ -1,0 +1,21 @@
+<p> Employee Name  <input [(ngModel)]="emp_name">   </p>
+<p> Employee Age  <input [(ngModel)]="emp_age">    </p>
+<p> Employee Qualification  <input [(ngModel)]="emp_qua">   </p>
+
+<button *ngIf="btn_status" (click)="savemp()">Save</button>
+<button *ngIf="!btn_status" (click)="updatemp()">Update</button>
+
+<hr>
+
+<table>
+  <th>Name</th><th>Age</th><th>Qualification</th><th>Action</th>
+  <tr *ngFor="let x of employees; let i = index">
+    <td>{{x.name}}</td>
+    <td>{{x.age}}</td>
+    <td>{{x.qualification}}</td>
+    <td>
+      <button (click)="deletemp(i)">Delete</button>
+      <button (click)="editemp(x)">Edit</button>
+    </td>
+  </tr>
+</table>

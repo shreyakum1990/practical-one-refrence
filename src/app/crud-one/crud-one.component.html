@@ -1,0 +1,18 @@
+<h1>Add Employees</h1>
+<p>Employee Name : <input [(ngModel)]="emp_name"></p>
+<p>Employee Age : <input [(ngModel)]="emp_age"></p>
+<p>Employee Salary : <input [(ngModel)]="emp_sal"></p>
+<button (click)="save()">Save</button><br/>
+<h1>Employee List</h1>
+<table>
+  <th>Name</th><th>Age</th><th>Salary</th><th>Action</th>
+  <tr *ngFor="let x of emps; let i = index">
+    <td>{{x.name}}</td>
+    <td>{{x.age}}</td>
+    <td>{{x.sal}}</td>
+
+    <td><button (click)="delete(i)">Delete</button></td>
+    <td><button (click)="edit(x)">Edit</button></td>
+    
+  </tr>
+</table>

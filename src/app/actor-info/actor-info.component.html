@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Add Actors</h1>
+      <p>
+      Actor Name : <input [(ngModel)]="act.name">
+      </p>
+      <p>
+      Actor Age : <input [(ngModel)]="act.age">
+      </p>
+      <p>
+      No of Films : <input [(ngModel)]="act.no_of_films">
+      </p>
+      <p>
+      No of Awards : <input [(ngModel)]="act.no_of_awards">
+      </p>
+      <p>
+      No of Hits : <input [(ngModel)]="act.no_of_hits">
+      </p>
+      <p>
+        <button *ngIf="btn_updt" (click)="saveactor()">Save Actor</button>
+      </p>
+      <p>
+          <button *ngIf="!btn_updt" (click)="updtactor()">Update Actor</button>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+        <h1>Show Actors Record</h1>
+        <table>
+          <th>Name</th><th>Age</th><th>No of Hits</th><th>No of Films</th><th>No og Awards</th><th>Actions</th>
+          <tr *ngFor= "let x of actortype">
+            <td>{{x.data.name}}</td>
+            <td>{{x.data.age}}</td>
+            <td>{{x.data.no_of_hits}}</td>
+            <td>{{x.data.no_of_films}}</td>
+            <td>{{x.data.no_of_awards}}</td>
+            <td>
+              <button (click)="deleteactor(x.id)">Delete</button>
+              <button (click)="editactor(x)">Edit</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+</div>

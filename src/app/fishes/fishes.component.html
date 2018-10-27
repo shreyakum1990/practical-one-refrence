@@ -1,0 +1,35 @@
+<h1>Fishes Information</h1>
+
+<p>
+  Fish Name : <input [(ngModel)]="fish_name">
+</p>
+<p>
+  Fish Length : <input [(ngModel)]="fish_length">
+</p>
+<p>
+  Fish Cost : <input [(ngModel)]="fish_cost">
+</p>
+<p>
+  Fish Color : <input [(ngModel)]="fish_color">
+</p>
+<p>
+  Fish Picture : <input [(ngModel)]="fish_pic">
+</p>
+
+<button *ngIf="btn_status" (click)="fishsave()">Save</button>
+<button *ngIf="!btn_status" (click)="fishupdate()">Update</button>
+
+<table>
+  <th>Fish Name</th><th>Fish Length</th><th>Fish Color</th><th>Fish Cost</th><th>Fish Pics</th><th>Action</th>
+  <tr *ngFor="let x of fishes; let i = index">
+    <td>{{x.name}}</td>
+    <td>{{x.length}}</td>
+    <td>{{x.color}}</td>
+    <td>{{x.cost}}</td>
+    <td><img [src]="x.pic" width="100" height="100"></td> 
+    <td>
+      <button (click)="fishdelete(i)">Delete</button>
+      <button (click)="fishedit(x)">Edit</button>
+    </td>
+  </tr>
+</table>

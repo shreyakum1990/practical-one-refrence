@@ -1,0 +1,23 @@
+<p>Doctor Name <input [(ngModel)]="doc_name"></p><br>
+<p>Doctor Age <input [(ngModel)]="doc_age"></p><br>
+<p>Doctor Speciality <input  [(ngModel)]="doc_speciality"></p><br>
+<p>Doctor Mobile <input [(ngModel)]="doc_mobile"></p><br>
+<p> Doctor Email <input [(ngModel)]="doc_email"></p><br>
+
+<button (click)="savedoc()">Save</button>
+
+
+<table>
+  <th>Name</th><th>Age</th><th>Speciality</th><th>Mobile</th><th>Email</th><th>Action</th>
+  <tr *ngFor ="let x of doctors; let i=index">
+    <td>{{x.name}}</td>
+    <td>{{x.age}}</td>
+    <td>{{x.speciality}}</td>
+    <td>{{x.mobile}}</td>
+    <td>{{x.email}}</td>
+    <td>
+      <button (click)="deletedoc(i)">Delete</button>
+      <button (click)="editdoc(x)">Edit</button>
+    </td>
+  </tr>
+</table>

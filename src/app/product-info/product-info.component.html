@@ -1,0 +1,32 @@
+<p>Product Information</p>
+<hr>
+<p> Product Name : <input [(ngModel)]="prod.name"> </p>
+<p> Product Cost : <input [(ngModel)]="prod.cost"> </p>
+<p> Product Picture : <input [(ngModel)]="prod.pic"> </p>
+<p> Product Ingredient : <input [(ngModel)]="prod.ingredient"> </p>
+<p>
+  <button *ngIf="btn_stat" (click)="saveprod()">Save Product</button>
+</p>
+<p>
+  <button *ngIf="!btn_stat" (click)="updtprod()">Update Product</button>
+</p>
+<hr>
+
+<table>
+  <th>Product Name</th><th>Product Cost</th><th>Product Picture</th><th>Product Ingredient</th><th>Action</th>
+  <tr *ngFor="let x of productfor">
+    <td>{{x.data.name}}</td>
+    <td>{{x.data.cost}}</td>
+    <td>
+      <img [src]="x.data.pic" width="100" height="100">
+    </td>
+    <td>{{x.data.ingredient}}</td>
+    <td>
+      <button (click)="deleteprod(x.id)">Delete</button>
+    </td>
+    <td>
+      <button (click)="editprod(x)">Edit</button> <!--x is an array inside array give id and data-->
+      <!--id is key and data is a value-->
+    </td>
+  </tr>
+</table>

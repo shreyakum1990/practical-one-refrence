@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Add City</h1>
+      <p>
+        City name: <input [(ngModel)]="citi.name">
+      </p>
+      <p>
+        City pic: <input [(ngModel)]="citi.pic">
+      </p>
+      <p>
+        City population: <input [(ngModel)]="citi.population">
+    </p>
+    <p>
+        City mayor: <input [(ngModel)]="citi.mare">
+    </p>
+    <p>
+      <button *ngIf="btn_updt" (click)="saveRecord()">Save City</button>
+    </p>
+    <p>
+        <button *ngIf="!btn_updt" (click)="updateRecord()">Update City</button>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Show City</h1>
+        <table>
+          <th>Name</th><th>City Pic</th><th>Population</th><th>Mayor</th>
+          <tr *ngFor="let x of citytype">
+            <td>{{x.data.name}}</td>
+            <td>
+              <img [src]="x.data.pic" width="100" height="100" alt="">
+            </td>
+            <td>{{x.data.population}}</td>
+            <td>{{x.data.mare}}</td>
+            <td>
+                <button (click)="deleteciti(x.id)">Delete</button>
+                <button (click)="editciti(x)">Edit</button>
+              </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>

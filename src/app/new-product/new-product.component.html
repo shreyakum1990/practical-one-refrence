@@ -1,0 +1,36 @@
+<p>New Product Component</p>
+
+<p>
+  Product name : <input [(ngModel)]="prod.name">
+</p>
+<p>
+  Product cost : <input [(ngModel)]="prod.cost">
+</p>
+<p>
+  Product pic : <input [(ngModel)]="prod.pic">
+</p>
+<p>
+  Product brand : <input [(ngModel)]="prod.brand">
+</p>
+<p>
+  <button *ngIf="btn_updt" (click)="saveprd()" class="btn btn-primary">Save Product</button>
+</p>
+<p>
+  <button *ngIf="!btn_updt"(click)="updtprod()" class="btn btn-primary">Update Product</button>
+</p>
+
+<table>
+  <th>Name</th><th>Cost</th><th>Pic</th><th>Brand</th><th>Action</th>
+  <tr *ngFor="let x of producttype">
+    <td>{{x.data.name}}</td>
+    <td>{{x.data.cost}}</td>
+    <td>{{x.data.pic}}</td>
+    <td>{{x.data.brand}}</td>
+    <td>
+      <button (click)="deleteprod(x.id)" class="btn btn-primary">Delete</button>
+    </td>
+    <td>
+      <button (click)="editprod(x)" class="btn btn-primary">Edit</button>
+    </td>
+  </tr>
+</table>

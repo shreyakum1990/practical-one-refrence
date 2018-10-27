@@ -1,0 +1,31 @@
+<p>
+  Employee name <input [(ngModel)]="emps.name" >
+</p>
+<p>
+  Employee salary <input [(ngModel)]="emps.sal">
+</p>
+<p>
+  Employee qualification
+  <select [(ngModel)]="emps.qualify">
+    <option value="">Select Qualification</option>
+    <option value="CS">CS</option>
+    <option value="Engineer">Engineer</option>
+  </select>
+</p>
+<p>
+  <button *ngIf="btn_stat" (click)="empsave()">Save</button>
+  <button *ngIf="!btn_stat" (click)="updtsave()">Update</button>
+</p>
+<!-- {{empqa | json}} -->
+<table>
+  <th>Name</th><th>Salary</th><th>Qualification</th>
+  <tr *ngFor="let x of empqa">
+    <td>{{x.data.name}}</td>
+    <td>{{x.data.sal}}</td>
+    <td>{{x.data.qualify}}</td>
+    <td>
+      <button (click)="deleteemp(x.id)">Delete</button>
+      <button (click)="editemp(x)">Edit</button>
+    </td>
+  </tr>
+</table>
